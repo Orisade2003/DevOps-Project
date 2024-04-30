@@ -8,9 +8,9 @@ pipeline {
             }
           }
         stage('Build') {
-        script {
-                def image = docker.build("${env.COMPONENT_NAME}")
-            }
+            script {
+                    docker.build("${env.COMPONENT_NAME}")
+                }
         }
     }
 }
