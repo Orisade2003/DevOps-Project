@@ -7,6 +7,7 @@ pipeline {
           }
 
 
+
         stage('Build') {
             def image = docker.build(${env.COMPONENT_NAME})
         }
