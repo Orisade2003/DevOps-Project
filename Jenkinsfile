@@ -15,7 +15,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( '${env.IMAGE_URL}', '${env.REPO_CREDS}') {
+          docker.withRegistry( '${env.IMAGE_URL}', '${REPO_CREDS}') {
             dockerImage.push()
           }
         }
