@@ -5,7 +5,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build "${env.COMPONENT_NAME}"
+          dockerImage = docker.build "${env.COMPONENT_NAME}:${GIT_COMMIT} "
         }
       }
     }
