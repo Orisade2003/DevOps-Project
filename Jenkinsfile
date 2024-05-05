@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+                REPO_CREDS =  credentials("RepoCredentials")
+           }
   agent any
   stages {
 
@@ -12,7 +15,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( '${env.IMAGE_URL}', credentials("RepoCredentials") ) {
+          docker.withRegistry( '${env.IMAGE_URL}', "${env.REPO_CREDS}" ) {
             dockerImage.push()
           }
         }
