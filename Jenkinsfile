@@ -1,18 +1,13 @@
 pipeline {
-    agent any
+  agent any
+  stages {
 
-    stages {
-        stage('Clone repository') {
-            steps{
-                checkout scm
-            }
-          }
-        stage('Build') {
-            steps{
-                script {
-                    def image = docker.build("${env.COMPONENT_NAME}")
-                    }
-                }
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build "${env.COMPONENT_NAME}"
         }
+      }
     }
+  }
 }
