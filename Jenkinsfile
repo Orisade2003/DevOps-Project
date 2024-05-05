@@ -12,7 +12,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( '${env.IMAGE_URL}', withCredentials([usernamePassword(credentialsId: 'RepoCredentials', passwordVariable: 'password', usernameVariable: 'username')]) ) {
+          docker.withRegistry( '${env.IMAGE_URL}', withCredentials([usernamePassword(credentialsId: 'RepoCredentials', passwordVariable: 'Password', usernameVariable: 'Username')]) ) {
             dockerImage.push()
           }
         }
