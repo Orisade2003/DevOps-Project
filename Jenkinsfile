@@ -12,7 +12,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( '${env.IMAGE_URL}', credentials('RepoCredentials') ) {
+          docker.withRegistry( '${env.IMAGE_URL}', withCredentials('RepoCredentials') ) {
             dockerImage.push()
           }
         }
