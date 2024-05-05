@@ -9,5 +9,16 @@ pipeline {
         }
       }
     }
+    stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '${env.IMAGE_URL}', credentials('RepoCredentials') ) {
+            dockerImage.push("$BUILD_NUMBER")
+             dockerImage.push('latest')
+
+          }
+        }
+      }
+    }
   }
 }
