@@ -4,7 +4,6 @@ pipeline {
            }
   agent any
   stages {
-
     stage('Building image') {
       steps{
         script {
@@ -16,7 +15,7 @@ pipeline {
             steps {
                 script {
                     dockerImage.inside{
-                    sh "echo hello world"
+                    sh "pytest ."
                     }
                 }
             }
