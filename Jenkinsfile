@@ -12,6 +12,16 @@ pipeline {
         }
       }
     }
+    stage('Test') {
+            steps {
+                script {
+                    dockerImage.inside{
+                    sh "echo hello world"
+                    }
+                }
+            }
+        }
+
     stage('Deploy Image') {
       steps{
         script {
