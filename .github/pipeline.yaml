@@ -1,0 +1,16 @@
+name: non-prod
+
+# Define when this workflow should run
+on:
+  push
+
+# Define the jobs
+jobs:
+  callPipeline:
+    uses: Orisade2003/central-ci-cd/.github/workflows/non-prod.yaml@main
+    with:
+      app-name: Devops
+    secrets:
+      DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
+      DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
+
