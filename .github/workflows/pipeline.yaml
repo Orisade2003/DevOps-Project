@@ -9,7 +9,7 @@ jobs:
   callPipeline:
     uses: Orisade2003/central-ci-cd/.github/workflows/non-prod.yaml@main
     with:
-      app-name: Devops
+      app-name: devops-project
     secrets:
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
       DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
