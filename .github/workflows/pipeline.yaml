@@ -1,5 +1,4 @@
 name: non-prod
-
 # Define when this workflow should run
 on:
   push
