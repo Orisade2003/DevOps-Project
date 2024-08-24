@@ -11,4 +11,6 @@ jobs:
     secrets:
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
       DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
+      GITOPS_REPO_TOKEN: ${{secrets.GITOPS_REPO_TOKEN}}
+
 
