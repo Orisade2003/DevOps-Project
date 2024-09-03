@@ -3,7 +3,6 @@ name: non-prod
 on:
   push
 # Define the jobs
-
 jobs:
   callPipeline:
     uses: Orisade2003/central-ci-cd/.github/workflows/non-prod.yaml@main
