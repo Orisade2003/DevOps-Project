@@ -10,7 +10,7 @@ jobs:
     with:
       app-name: devops-project
       values-path: environments/dev/values/microservice-devops-values.yaml
-      gitops-repo: ${{ env.GITOPS_REPO }}
+      gitops-repo: $GITOPS_REPO
     secrets:
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
       DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
