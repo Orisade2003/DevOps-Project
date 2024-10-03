@@ -11,7 +11,7 @@ jobs:
     uses: Orisade2003/central-ci-cd/.github/workflows/non-prod.yaml@main
     with:
       app-name: devops-project
-      values-path: environments/dev/values/microservice-devops-values.yaml
+      values-path: environments/${ENV_NAME}/values/microservice-devops-values.yaml
       gitops-repo: ${{vars.GITOPS_REPO}}
     secrets:
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
